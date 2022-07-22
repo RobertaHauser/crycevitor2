@@ -17,6 +17,9 @@ from validate_email import validate_email
 from django.urls import reverse
 from .models import CustomUser
 
+
+
+
 # Create your views here.
 #@login_required
 def home(request):
@@ -122,6 +125,7 @@ def register(request):
     
     return render(request, 'authentication/register.html')
 
+"""
 
 def login_user(request):
     return render(request, 'authentication/login.html')
@@ -172,7 +176,7 @@ def logout_user(request):
 
     return redirect(reverse('login'))
 
-
+"""
 ### ACTIVATE USER
 def activate_user(request, uidb64, token):
 
@@ -194,7 +198,8 @@ def activate_user(request, uidb64, token):
 
     return render(request, 'authentication/activate-failed.html', {"user": user})
 
-
+""""
 #@login_required
 def password_change(request):
     return render(request,'authentication/password_change.html')
+"""
