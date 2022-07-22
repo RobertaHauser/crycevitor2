@@ -1,0 +1,76 @@
+{% extends "_partials/base.html" %}
+
+{% block title %}Registro{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="grid">
+  <div class="four wide column"></div>
+  <div class="eight wide column">
+    <div class="middle aligned center aligned grid">
+      <div class="column mt-5">
+
+        <h2 class="teal image header">
+          <div class="content">Registro</div>
+        </h2>
+
+          {% include '_partials/messages.html'%}
+
+
+        <form class="large form" method="post" action={% url 'register' %}>
+          {% csrf_token %}
+          <div class="stacked segment">
+
+            <div class="field">
+              <div class="left icon input">
+                <i class="user icon"></i>
+                <input type="text" name="first_name" value="{{data.first_name}}"  placeholder="Nome" />
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="left icon input">
+                <i class="user icon"></i>
+                <input type="text" name="last_name" value="{{data.last_name}}"  placeholder="Sobrenome" />
+              </div>
+            </div>
+          <!--    
+            <div class="field">
+              <div class="left icon input">
+                <i class="user icon"></i>
+                <input type="text" name="username" value="{{data.username}}"  placeholder="Username" />
+              </div>
+            </div>
+          -->    
+            <div class="field">
+              <div class="left icon input">
+                <i class="user icon"></i>
+                <input type="text" name="email" value="{{data.email}}" placeholder="E-mail" />
+              </div>
+            </div>
+            <div class="field">
+              <div class="left icon input">
+                <i class="lock icon"></i>
+                <input type="password" name="password" placeholder="Senha" />
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="left icon input">
+                <i class="lock icon"></i>
+                <input type="password" name="password2" placeholder="Repetir Senha"/>
+              </div>
+            </div>
+            <button class="fluid large teal submit button">Enviar</button>
+          </div>
+
+        </form>
+
+        <div class="message">Já tem uma conta? <a href={% url 'login' %}>Login</a></div>
+    <div class="four wide column"></div>
+  </div>
+</div>
+
+{% endblock content %}
