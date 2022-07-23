@@ -1,0 +1,12 @@
+nome: Coordenador
+sobrenome: Servmetal
+email: coordenador@servmetal.com.br
+senha: senh@123
+
+
+registro c/ email: OK
+login: OK
+logout:OK
+change password: NÃO
+forgout password: NÃO
+

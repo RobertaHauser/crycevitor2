@@ -1,0 +1,12 @@
+{% autoescape off %}
+
+
+Olá, {{user.first_name}}
+
+Por favor, use o link abaixo para verificar sua conta.
+
+
+http://{{domain}}{% url 'activate' uidb64=uid token=token %}
+
+
+{% endautoescape %}
